@@ -18,9 +18,13 @@ head(binomAll)
 tail(binomAll)
 
 ggplot(binomAll,aes(x=Success)) + geom_histogram() + facet_wrap(~Size,scales = "free")
-
+facet_wrap()
 dbinom(x = 3,size = 10, prob = 0.3) # 3 od 10 uspesi
 pbinom(q = 3, size = 10, prob = 0.3) # 3 ili polmaku
 qbinom(p = 0.99, size = 5 ,prob = 0.3) # kolku obidi od 5 ni trebaat za da dobieme verojatnost p
 qbinom(c(.3,.35,.40,.50,.90,.95,.96,.97,.98,.99), size = 5 ,prob = 0.3) # vektor od verojatnosti
+
+
+
+
 

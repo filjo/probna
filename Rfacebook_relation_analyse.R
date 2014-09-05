@@ -14,19 +14,19 @@ myfriends <- getFriends(token,simplify = FALSE)
 myfriends_info <- getUsers(myfriends$id,token = token,private_info = TRUE)
 table(myfriends$relationship_status)
 
-stat <- as.data.frame(table(myfriends$relationship_status))
-names(stat) <- c("Status","Vrednost")
-stat
-class(stat$Vrednost)
-stat$Vrednost <- as.integer(stat$Vrednost)
+stats <- as.data.frame(table(myfriends$relationship_status))
+names(stats) <- c("Status","Vrednost")
+stats
+class(stas$Vrednost)
+stat$Vrednost <- as.integer(stats$Vrednost)
 
-sum <- sum(stat$Vrednost)
-element <- stat$Vrednost / sum
+sum <- sum(stats$Vrednost)
+element <- stats$Vrednost / sum
 element
 procent <- percent(element)
 procent
-stat$procent <- procent
-stat
+stats$procent <- procent
+stats
 
 statistika <- data.frame(Name = myfriends$name,Status=myfriends$relationship_status)
 head(statistika)
