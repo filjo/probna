@@ -1,0 +1,5 @@
+require(RMySQL)
+
+con <- dbConnect(MySQL(), username = "saaspass", password = "saaspass", host = "192.168.10.252", dbname = "saaspass") # konektiranje na host...
+lista <- dbGetQuery(conn = con ,statement = "select * from companies")
+lista
