@@ -20,3 +20,38 @@ View(presidents[str_detect(string = presidents$PRESIDENT, pattern = ignore.case(
 con <- url("http://www.jaredlander.com/data/warTimes.rdata")
 load(con)
 close(con)
+head(warTimes,10)
+theTimes <- str_split(string = warTimes,pattern = "(ACAEA)|-", n=2)
+head(theTimes,10)
+
+# WarStarted time
+
+warStarted <- sapply(X = theTimes, FUN = function(x) x[1])
+head(warStarted,10)
+warStarted <- str_trim(string = warStarted)
+
+head(str_extract(string = warStarted, pattern = "^\\d{4}"),20)
+head(str_extract(string = warStarted, pattern = "\\D+"))
+
+
+
+
+head(warTimes,40)
+
+data <- str_split(string = warTimes, pattern = "(ACAEA)|-",n = 2)
+data <- sapply(X = data,FUN = function(x) x[1] )
+head(data)
+
+data <- data[str_detect(string = data, pattern = "\\d{4}")]
+data <- str_extract(string = data ,pattern = "\\d{4}")
+
+require(ggplot2)
+
+rnorm(20)
+set.seed(1)
+rnorm(20)
+set.seed(1)
+rnorm(20)
+set.seed(15021991)
+rnorm(20)
+rbinom(20,size = 10, prob = 0.5)
